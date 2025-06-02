@@ -1,4 +1,4 @@
-import Todo from "../models/todoModel";
+import Todo from "../models/todoModel.js";
 
 
 export const getTodos= async (req,res)=>{
@@ -51,7 +51,7 @@ export const updateTodo=async(req,res)=>{
         const todo=await Todo.findById(id);
         if(!todo) return res.status(404).json({message:"Todo Not Found"})
             
-            
+        
             if(text!==undefined) todo.text=text;
             if(completed!== undefined) todo.completed=completed;
             
